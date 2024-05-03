@@ -1,4 +1,7 @@
 {
+  "local-pubg-spec-dashboard-pubg-spec-dashboard-TeamsTableStack": {},
+  "local-pubg-spec-dashboard-pubg-spec-dashboard-PlayersTableStack": {},
+  "local-pubg-spec-dashboard-pubg-spec-dashboard-TourneysTableStack": {},
   "local-pubg-spec-dashboard-pubg-spec-dashboard-ApiStack": {
     "ApiEndpoint": "https://7vfxgmpx2i.execute-api.sa-east-1.amazonaws.com"
   },
