@@ -1,0 +1,8 @@
+{
+  "local-pubg-spec-dashboard-pubg-spec-dashboard-ApiStack": {
+    "ApiEndpoint": "https://7vfxgmpx2i.execute-api.sa-east-1.amazonaws.com"
+  },
+  "local-pubg-spec-dashboard-pubg-spec-dashboard-FrontendStack": {
+    "SiteUrl": "https://localhost:3000"
+  }
+}
