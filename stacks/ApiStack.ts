@@ -23,6 +23,7 @@ export const ApiStack = ({ stack }: StackContext) => {
 		cors: true,
 		routes: {
 			'GET /teams': `${apiHandlersPath}teams.get`,
+			'GET /teams/{teamId}': `${apiHandlersPath}teams.getTeam`,
 			'POST /teams': `${apiHandlersPath}teams.post`
 		}
 	})
