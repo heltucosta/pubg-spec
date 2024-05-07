@@ -4,7 +4,9 @@ import { useEffect } from 'react'
  import { css } from '@emotion/react'
 import { Grid, Button } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
-import { getTeams, createTeam } from '../reducers/teamSlice'
+import { getTeams, createTeam, getTeam } from '../reducers/teamSlice'
+import { ListComponent } from '../components'
+import { List } from '@mui/icons-material'
 
 const titleBoxStyle = css({
   position: 'relative'
@@ -44,23 +46,20 @@ const HomePage = () => {
     dispatch(createTeam(team))
   }
 
+  const handleTeamClick = (teamId) => {
+    dispatch(getTeam(teamId))
+  }
+
 
   return (
     <Grid container>
       <Grid item xs={12}>
         <div>
           <h1>Times registrados</h1>
-          <Grid container>
-          {teams && teams.length > 0 && teams.map((team, idx) => (
-            <Grid item xs={12} md={4} key={idx}>
-              <div>
-                <img src={team.logo} alt={`${team.name} logo`}/>
-              </div>
-              <h3>{team.name}</h3>
-              {team.players && team.players.map((player, pidx) => <p key={pidx}>{player}</p>)}
-            </Grid>
-          ))}
-          </Grid>
+          <ListComponent
+            items={teams}
+            fields={['name', 'players', 'logo', 'image']}
+          />
           <Button onClick={handleCreateTeam} variant='contained'>Create team</Button>
         </div>
       </Grid>

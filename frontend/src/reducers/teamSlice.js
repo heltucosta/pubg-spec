@@ -9,6 +9,14 @@ export const getTeams = createAsyncThunk('teams/getTeams', async () => {
   }
 })
 
+export const getTeam = createAsyncThunk('teams/getTeam', async (teamId) => {
+  try {
+    return API.get('api', `/teams/${teamId}`, teamId)
+  } catch (e) {
+    console.log(e)
+  }
+})
+
 export const createTeam = createAsyncThunk('team/createTeam', async (team) => {
   try {
     console.log('createTeam', team)
@@ -27,6 +35,9 @@ export const teamSlice = createSlice({
     builder
       .addCase(getTeams.fulfilled, (state, { payload }) => {
         state.teams = payload
+      })
+      .addCase(getTeam.fulfilled, (state, { payload }) => {
+        state.team = payload
       })
       .addCase(createTeam.fulfilled, (state, { payload }) => {
         state.teams = payload

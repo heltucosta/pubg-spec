@@ -16,9 +16,12 @@ const parseNoteDate = note => {
 	return `${day}/${month}/${year}`
 }
 
+const getActiveLink = (currentPath, targetPath) => currentPath === targetPath
+
 export {
 	validateEmail,
 	validatePassword,
 	parseNoteTitle,
-	parseNoteDate
+	parseNoteDate,
+	getActiveLink
 }
